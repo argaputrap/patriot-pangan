@@ -1,0 +1,40 @@
+.main-article{
+    margin: 0;
+}
+
+.jumbotron-articles {
+    margin: 0 0 2rem 0;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0, 0.12);
+    border-radius: 0;
+}
+
+.article-header__img {
+    max-width: 640px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.article-main__content {
+    background: #F6F6F6;
+    border-radius: 0.5rem;
+    padding: 3rem;
+    margin: 1rem 0;
+}
+
+.article-main__title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.article-header__helper {
+    background: #555;
+    width: 100%;
+    height: 100%;
+}
+
+.img-wrapper {
+    width: 640px;
+    height: 480px;
+}

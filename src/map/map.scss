@@ -1,0 +1,144 @@
+@import "../shared.scss";
+
+.indonesia-map {
+    margin-bottom: 3rem
+}
+
+.map {
+    margin: 1rem 0;
+}
+
+.map__description {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    z-index: 1;
+}
+
+svg {
+    width: 100%;
+}
+
+.regencies {
+    fill: #222;
+}
+  
+.regencies :hover {
+    fill: orange;
+}
+
+.district {
+    fill: #222;
+    transition: all .2s ease-in-out;
+}
+
+
+.boundary {
+    fill: none;
+    stroke: #fff;
+    pointer-events: none;
+}
+
+.alert {
+    border-radius: 0px;
+}
+
+.map__tooltip {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    text-align: center !important;
+    width: 150px;
+    height: 48px;
+    padding: 5px;
+    font-size: 10px;
+    background: #ffffe0;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+
+.map__container {
+    width: 80%;
+}
+
+svg {
+    width: 100%;
+    display: block;
+
+}
+
+.map-detail__container {
+    position: relative;
+    height: 100%;
+}
+
+.indicators__lists li {
+    margin: 0.25rem 0;
+    border-radius: 0.25rem;
+}
+
+.kondisi-0 {
+    fill: #487C32;
+}
+
+.kondisi-1 {
+    fill: #62b648;
+}
+
+.kondisi-2 {
+    fill: #d3ee52;
+}
+
+.kondisi-3 {
+    fill: #e5933d;
+}
+
+.kondisi-4 {
+    fill: #dc5a3f;
+}
+
+.kondisi-5 {
+    fill: #dc5a3f;
+}
+
+.indonesia-map-detail {
+    display: none;
+}
+
+.indonesia-map-detail__title {
+    text-align: center;
+}
+
+.indonesia-map-detail hr {
+    border: 1px solid #ccc;
+    margin-bottom: 2rem;
+}
+
+.indicators {
+    margin: 2rem 0;
+}
+
+.total-district-levels__title,
+.percentage-district-levels__title,
+.total-reports__title,
+.indicators__title,
+.history__title {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.history {
+    position: relative;
+}
+
+.history__legend {
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    border: 1.5px solid #ccc;
+    margin: 1.5rem 2rem;
+    padding: 1rem;
+}

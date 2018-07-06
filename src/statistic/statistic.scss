@@ -1,0 +1,15 @@
+@import "../shared.scss";
+
+main {
+    margin: 3rem 0;
+}
+
+.chart-top,
+.chart-bottom {
+    text-align: center;
+}
+
+.chart-top p,
+.chart-bottom p {
+    font-size: 24px;
+}

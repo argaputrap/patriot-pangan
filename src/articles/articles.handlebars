@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type='text/javascript' 
+        src='//platform-api.sharethis.com/js/sharethis.js#property=5b3b3edf07712f0011378417&product=sticky-share-buttons' 
+        async='async'>
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>{{ htmlWebpackPlugin.options.title }}</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-sm navbar-expand-lg">
+            <a class="navbar-brand"  href="/">
+                <img src="../../assets/images/brand.png" width="30" height="30" class="d-inline-block align-top"><span class="brand-title ml-2">Patriot Pangan</span>
+            </a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars fa-2x navbar-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="map.html">Map<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statistic.html">Statistic</a>
+                    </li>
+                    <li class="nav-item nav-item-admin">
+                        <a class="nav-link" href="admin.html">Admin</a>
+                    </li>
+                    <li class="nav-item nav-item-signin">
+                        <a class="nav-link nav-signin" data-toggle="modal" data-target="#authModal">
+                            Sign In
+                        </a>
+                    </li>
+                    <li class="nav-item nav-item-signout">
+                        <a href="#" class="nav-link nav-signout">
+                            Sign Out
+                        </a>
+                    </li>
+                </ul>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main class="main-article">
+        <section class="article-header">
+           <div class="jumbotron jumbotron-articles">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <h2 class="article-header__title">Ahmand, 4 Tahun. Penderita Busung Lapar Berat</h2>
+                            <div class="image-wrapper">
+                                 <img alt="article-header" src="../../assets/images/640x480.png" class="img-responsive article-header__img">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="article-header__helper">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="article-main">
+            <div class="container">
+                <div class="article-main__content">
+                    <h3 class="article-main__title">Ahmand, 4 Tahun. Penderita Busung Lapar Berat</h3>
+                    <div class="article-main__paragraph">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="authModalLabel">Sign In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger alert-auth">
+                    <b>Email atau password anda salah</b>
+                </div>
+                <form class="form-auth">
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" class="form-control" placeholder="yours@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="yours@email.com">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary form-auth__button">Login</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                <h4>Patriot Pangan</h4>
+                <p>&copy; 2018 Copyrights Patriot Pangan Devs</p>
+            </div>
+            <div class="social-buttons">
+                <h4>Bagikan ke:</h4>
+                 <a href="#" data-social="twitter" data-url="http://patriotpangan.com">
+                    <i class="fa fa-2x fa-twitter-square" aria-hidden="true"></i>
+                </a>
+                <a href="#" data-social="facebook" data-url="http://patriotpangan.com">
+                    <i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i>
+                </a>
+                <a href="#" data-social="linkedin" data-url="http://patriotpangan.com">
+                    <i class="fa fa-2x fa-linkedin-square" aria-hidden="true"></i>
+                </a>
+                <a href="#" data-social="googleplus" data-url="http://patriotpangan.com">
+                    <i class="fa fa-2x fa-google-plus-square" aria-hidden="true"></i>
+                </a>
+                <a href="#" data-social="pinterest" data-url="http://patriotpangan.com">
+                    <i class="fa fa-2x fa-pinterest-square" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

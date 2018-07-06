@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import "~bootstrap/scss/bootstrap";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100vw;
+}
+
+.navbar {
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.45rem 1rem !important;
+}
+
+.navbar-toggler:active,
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-bars {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 30px;
+    height: 30px;
+    color: #fff
+}
+
+.nav-signin,
+.nav-signout {
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.brand {
+    vertical-align: bottom;
+}
+
+.brand-title {
+    font-family: 'Roboto Slab', serif;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-bottom: 0.1rem;
+}
+
+.social-buttons {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.social-buttons a {
+    color: white;
+    display: inline-block;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav a {
+    color: #fff;
+}
+
+.nav-item {
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    width: 7rem;
+    text-align: center;
+    margin: 0 0.5rem;
+    font-weight: bold;
+}
+
+
+
+.nav-item:active,
+.nav-item:hover,
+{
+    background: #fff;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    color: black;
+}
+
+.alert-auth {
+    display: none;    
+}
+
+footer {
+    background: #333;
+    padding: 32px;
+    display: block;
+    width: 100%;
+    color: #fff;
+    text-align: left;
+}
+
+footer img {
+    display: block;
+    color: white;
+    width: 40%;
+    height: 50%;
+    margin: 1rem 0;
+}
+
+footer i {
+    display: inline-block;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .jumbotron__content h1 {
+        font-size: 32px;
+    }
+
+    .jumbotron__content p {
+        font-size: 16px;
+    }
+
+    .kisah__highlight {
+        margin-bottom: 32px;
+    }
+
+
+    .fakta-pangan__story .card {
+        margin-bottom: 24px;
+    }
+
+    .nav-item {
+        border: none;
+        border-radius: 0;
+        width: 7rem;
+        text-align: center;
+        margin: 0 0.5rem;
+        font-weight: bold;
+        width: 100%;
+    }
+    
+}
