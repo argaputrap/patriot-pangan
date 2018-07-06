@@ -5,6 +5,7 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import { Router } from '../_services/router';
 import { url } from '../_services/url';
+import  urljs from 'url-js';
 import axios from 'axios';
 
 const ls = JSON.parse(localStorage.getItem('patriotpangan'));
@@ -58,10 +59,14 @@ Map.prototype.createMap = function() {
     const div = document.createElement('div');
     div.className = 'map-detail';
     const self = this;
+    const mapLoader = document.querySelector('.indonesia-map__loader');
     d3.json("/src/id2.json", function(error, id) {
         if (!error) {
             axios.get(url.get.map.createMap())
             .then(res => {
+                if (mapLoader) {
+                    mapLoader.style.display = 'none';
+                }
                 const provArr = res.data.data;
                 const provinceArr = id.objects.regency.geometries
                 provArr.forEach(prov => {
@@ -133,6 +138,8 @@ Map.prototype.createMap = function() {
                                 const levelDistrict = resLevels.data.data;
                                 const reportDistrict = resReports.data.data[0];
                                 const historyDistrict = resHistory.data.data;
+
+                                console.log(levelDistrict);
 
                                 let level = [];
                                 let report = [];
@@ -207,7 +214,7 @@ Map.prototype.createMap = function() {
             
         } else {
             const div = document.createElement('div');
-            div.classList.add('alert alert-danger text-center');
+            div.className = 'alert alert-danger text-center';
             div.appendChild(document.createTextNode('Error: ', error));
 
             const map = document.querySelector('.map');
@@ -220,6 +227,7 @@ Map.prototype.createMap = function() {
 
 Map.prototype.totalDistrictLevels = function(data, id, province,isClicked) {
     let barChartHorizontal;
+    sessionStorage.setItem('patriotpangan_district', JSON.stringify({province, id}));
     function createChart() {
         const ctx = document.getElementById('total-district-levels__chart');
         if (ctx && !isClicked) {
@@ -258,7 +266,7 @@ Map.prototype.totalDistrictLevels = function(data, id, province,isClicked) {
                             bottom: 24
                         }
                     },
-                    onClick: function(event, array) {
+                    onClick: (event, array) => {
                         const label = array[0]._model.label;
                         const labelArray = label.split('').filter(label => {
                             if (label !== ' ') {
@@ -266,9 +274,7 @@ Map.prototype.totalDistrictLevels = function(data, id, province,isClicked) {
                             }
                         });
                         const labelFixed = labelArray.join('').toLowerCase();
-                        Router.navigate(`/map-details.html?value=${labelFixed}&idprovince=${id}&province=${province}`)
-                        // const url = new URL('http://localhost:3000/map-details.html?value=' + labelFixed + '&idprovince=' + id + '&province= ' + province);
-                        // url.href
+                        Router.navigate(`/map-details.html?value=${labelFixed}`)
                     }
                 }
             }

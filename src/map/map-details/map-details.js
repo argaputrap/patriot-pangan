@@ -23,6 +23,7 @@ if (token) {
     navSignOut.style.display = 'none';
 }
 
+
 function MapDetails() {
     this.isClicked = false;
     this.configLineChart;
@@ -34,10 +35,14 @@ MapDetails.prototype.getData = function() {
     const urlParse = new URL(urlString);
 
     const level = urlParse.searchParams.get('value');
-    const id = urlParse.searchParams.get('idprovince');
-    const province = urlParse.searchParams.get('province');
+    // const id = urlParse.searchParams.get('idprovince');
+    // const province = urlParse.searchParams.get('province');
 
     const self = this;
+
+    const ss = JSON.parse(sessionStorage.getItem('patriotpangan_district'));
+    const id = ss.id;
+    const province = ss.province;
 
     const titleDOM = document.querySelector('.district-table__name');
     if (titleDOM) {
@@ -51,7 +56,7 @@ MapDetails.prototype.getData = function() {
         const p = document.querySelector('.district-table__level');
         p.innerHTML = `Menampilkan data untuk: <b>${levels[levelArr[5]]}</b>`;
         fetchAPI();
-
+        const mapLoader = document.querySelector('.indonesia-map__loader');
         function fetchAPI() {
             // Date
             const date = new Date;
@@ -60,6 +65,10 @@ MapDetails.prototype.getData = function() {
             const urlAPI = url.get.map.detail.levelDistrict(getYear, levelArr[5], id);
             axios.get(urlAPI)
                 .then(res => {
+                    console.log(res);
+                    if (mapLoader) {
+                        mapLoader.style.display = 'none';
+                    }
                     if (res.status === 200 && res.data.status) {
                         const data = res.data.data;
                         const regencyArr = [];
@@ -160,7 +169,7 @@ MapDetails.prototype.createModal = function(id, district, regency, province) {
                    
                 }
             } else {
-                alert('Internal Server Error');
+                // alert('Internal Server Error');
             }
         })
         .catch(err => {

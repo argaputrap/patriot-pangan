@@ -17,6 +17,7 @@ Auth.prototype.signIn = function() {
         email: emailValue,
         password: passwordValue,
     }).then(res => {
+        console.log(res);
         if (res.status === 200 && res.data.status) {
             const token = JSON.stringify({token: res.data.token});
             localStorage.setItem('patriotpangan', token);

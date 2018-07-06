@@ -61,6 +61,8 @@
     "popper.js": "^1.14.3",
     "tether": "^1.4.4",
     "toastr": "^2.1.4",
-    "topojson-client": "^3.0.0"
+    "topojson-client": "^3.0.0",
+    "url-js": "^0.2.3-u",
+    "urljs": "^2.3.1"
   }
 }

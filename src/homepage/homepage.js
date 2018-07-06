@@ -25,13 +25,13 @@ if (token) {
     navSignOut.style.display = 'block';
 
 } else {
-    // navAdmin.style.display = 'none';
-    // navSignOut.style.display = 'none';
-    // // Get admin body
-    // const adminBody = document.querySelector('.body-admin');
-    // if (location.href === 'http://localhost:3000/admin.html') {
-    //     location.href = 'http://localhost:3000';
-    // }
+    navAdmin.style.display = 'none';
+    navSignOut.style.display = 'none';
+    // Get admin body
+    const adminBody = document.querySelector('.body-admin');
+    if (location.href === 'http://localhost:3000/admin.html') {
+        location.href = 'http://localhost:3000';
+    }
 }
 
 
@@ -67,7 +67,7 @@ Homepage.prototype.setData = function(total) {
         kisahTitle.className = 'desa-total';
         const patriotTitle = document.createElement('h3')
         patriotTitle.className = 'desa-total';
-    
+
         // Insert tingkat kerawanan desa
         kisahTitle.appendChild(document.createTextNode(total.artikel));
         kisah.insertBefore(kisahTitle, kisah.firstChild);
@@ -97,29 +97,63 @@ Homepage.prototype.getArticle = function() {
             if (res.status === 200 && res.data.status) {
                 const result = res.data.data;
                 const story = document.querySelector('.fakta-pangan__story');
+                const highlightBtn = document.querySelector('.kisah__highlight-btn');
+                const idArticle = result[result.length - 1].id
+
+                if (highlightBtn) {
+                    highlightBtn.addEventListener('click', function() {
+                        location.href = `http://localhost:3000/articles.html?id=${idArticle}`;
+                    })
+                }
+
+ 
                 let card = '';
                 let images = [];
                 const limit = result.length - 4;
-                for (let i = result.length - 1; i > limit ; i -= 1) {
-                    card += 
-                    `
-                        <div class="col-md-4 col-sm-12 col-xs-12">
-                            <div class="card card-story">
-                                <img class="card-img-top" src="http://patriotpangan.com/nodejs/public/images/artikels/${result[i].pathfoto}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">${result[i].judul}</h5>
-                                    <p class="card-text">
-                                       ${result[i].isi.split(' ').splice(0, 15).join(' ') + '...'}
-                                    </p>
-                                    <a href="/articles.html?id=${result[i].id}" class="card-link pull-right">
-                                        READ MORE
-                                    </a>
+                if (result.length < 3) {
+                    for (let i = 0; i < result.length; i++) {
+                        card += 
+                        `
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="card card-story">
+                                    <img class="card-img-top" src="http://patriotpangan.com/nodejs/public/images/artikels/${result[i].pathfoto}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${result[i].judul}</h5>
+                                        <p class="card-text">
+                                           ${result[i].isi.split(' ').splice(0, 15).join(' ') + '...'}
+                                        </p>
+                                        <a href="/articles.html?id=${result[i].id}" class="card-link pull-right">
+                                            READ MORE
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `
-                    images.push(result[i].pathfoto);
+                        `
+                        images.push(result[i].pathfoto);
+                    }
+                } else {
+                    for (let i = result.length - 1; i > limit ; i -= 1) {
+                        card += 
+                        `
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="card card-story">
+                                    <img class="card-img-top" src="http://patriotpangan.com/nodejs/public/images/artikels/${result[i].pathfoto}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${result[i].judul}</h5>
+                                        <p class="card-text">
+                                           ${result[i].isi.split(' ').splice(0, 15).join(' ') + '...'}
+                                        </p>
+                                        <a href="/articles.html?id=${result[i].id}" class="card-link pull-right">
+                                            READ MORE
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                        images.push(result[i].pathfoto);
+                    }
                 }
+              
 
                 if (story) {
                     story.innerHTML = card;
@@ -127,7 +161,7 @@ Homepage.prototype.getArticle = function() {
                 }
 
             } else {
-                alert('Internal Server Error');
+                // alert('Internal Server Error');
             }
         })
 }

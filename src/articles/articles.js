@@ -34,7 +34,7 @@ Articles.prototype.getData = function() {
                
 
             } else {
-                alert('Internal Server Error');
+                // alert('Internal Server Error');
             }
         })
         .catch(err => {

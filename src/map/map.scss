@@ -46,6 +46,15 @@ svg {
     border-radius: 0px;
 }
 
+
+.indonesia-map__loader {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-color: #fff !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    color: #000 !important;
+}
+
 .map__tooltip {
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
@@ -74,6 +83,7 @@ svg {
     position: relative;
     height: 100%;
 }
+
 
 .indicators__lists li {
     margin: 0.25rem 0;
